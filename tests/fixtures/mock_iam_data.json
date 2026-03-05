@@ -1,0 +1,98 @@
+[
+  {
+    "type": "IAM_USER",
+    "name": "svc-old-backup",
+    "age_days": 450,
+    "days_since_last_used": null,
+    "last_used": "Never",
+    "policies": ["AdministratorAccess"],
+    "access_key_1_age_days": 450,
+    "access_key_1_status": "Active",
+    "has_ip_condition": false,
+    "has_mfa_condition": false,
+    "suspicious_activity_flag": false
+  },
+  {
+    "type": "IAM_USER",
+    "name": "svc-deployment",
+    "age_days": 180,
+    "days_since_last_used": 2,
+    "last_used": "2026-02-27",
+    "policies": ["AmazonS3FullAccess", "AmazonEC2FullAccess"],
+    "access_key_1_age_days": 95,
+    "access_key_1_status": "Active",
+    "has_ip_condition": false,
+    "has_mfa_condition": false
+  },
+  {
+    "type": "IAM_USER",
+    "name": "svc-external-api",
+    "age_days": 45,
+    "days_since_last_used": 1,
+    "last_used": "2026-02-28",
+    "policies": ["AmazonS3ReadOnlyAccess"],
+    "access_key_1_age_days": 45,
+    "access_key_1_status": "Active",
+    "has_ip_condition": true,
+    "has_mfa_condition": false
+  },
+  {
+    "type": "IAM_ROLE",
+    "name": "role-lambda-overprivileged",
+    "age_days": 300,
+    "days_since_last_used": 95,
+    "last_used": "2025-11-26",
+    "policies": ["AdministratorAccess"],
+    "has_ip_condition": false,
+    "assume_role_policy": {
+      "Version": "2012-10-17",
+      "Statement": [
+        {
+          "Effect": "Allow",
+          "Principal": {"Service": "lambda.amazonaws.com"},
+          "Action": "sts:AssumeRole"
+        }
+      ]
+    }
+  },
+  {
+    "type": "IAM_ROLE",
+    "name": "role-ec2-webserver",
+    "age_days": 60,
+    "days_since_last_used": 5,
+    "last_used": "2026-02-24",
+    "policies": ["AmazonS3ReadOnlyAccess", "CloudWatchLogsFullAccess"],
+    "has_ip_condition": false,
+    "assume_role_policy": {
+      "Version": "2012-10-17",
+      "Statement": [
+        {
+          "Effect": "Allow",
+          "Principal": {"Service": "ec2.amazonaws.com"},
+          "Action": "sts:AssumeRole"
+        }
+      ]
+    }
+  },
+  {
+    "type": "IAM_ROLE",
+    "name": "role-compromised",
+    "age_days": 500,
+    "days_since_last_used": 1,
+    "last_used": "2026-02-28",
+    "policies": ["AdministratorAccess", "SecretsManagerReadWrite"],
+    "has_ip_condition": false,
+    "has_mfa_condition": false,
+    "suspicious_activity_flag": true,
+    "assume_role_policy": {
+      "Version": "2012-10-17",
+      "Statement": [
+        {
+          "Effect": "Allow",
+          "Principal": {"AWS": "arn:aws:iam::999999999999:root"},
+          "Action": "sts:AssumeRole"
+        }
+      ]
+    }
+  }
+]

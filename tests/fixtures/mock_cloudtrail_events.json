@@ -1,0 +1,82 @@
+[
+  {
+    "EventId": "evt-001",
+    "EventName": "GetUser",
+    "EventTime": "2026-02-28T10:15:00+00:00",
+    "Username": "svc-deployment",
+    "SourceIPAddress": "10.0.1.50",
+    "Resources": [{"ResourceType": "AWS::IAM::User", "ResourceName": "svc-deployment"}]
+  },
+  {
+    "EventId": "evt-002",
+    "EventName": "ListBuckets",
+    "EventTime": "2026-02-28T14:30:00+00:00",
+    "Username": "svc-deployment",
+    "SourceIPAddress": "10.0.1.50",
+    "Resources": []
+  },
+  {
+    "EventId": "evt-003",
+    "EventName": "PutObject",
+    "EventTime": "2026-02-27T09:00:00+00:00",
+    "Username": "svc-deployment",
+    "SourceIPAddress": "10.0.1.52",
+    "Resources": []
+  },
+  {
+    "EventId": "evt-004",
+    "EventName": "AssumeRole",
+    "EventTime": "2026-02-25T11:00:00+00:00",
+    "Username": "role-ec2-webserver",
+    "SourceIPAddress": "172.16.0.10",
+    "Resources": [{"ResourceType": "AWS::IAM::Role", "ResourceName": "role-ec2-webserver"}]
+  },
+  {
+    "EventId": "evt-005",
+    "EventName": "CreateAccessKey",
+    "EventTime": "2026-02-20T03:17:00+00:00",
+    "Username": "svc-old-backup",
+    "SourceIPAddress": "203.0.113.42",
+    "Resources": [{"ResourceType": "AWS::IAM::User", "ResourceName": "svc-old-backup"}]
+  },
+  {
+    "EventId": "evt-006",
+    "EventName": "AttachUserPolicy",
+    "EventTime": "2026-02-20T03:18:00+00:00",
+    "Username": "svc-old-backup",
+    "SourceIPAddress": "203.0.113.42",
+    "Resources": []
+  },
+  {
+    "EventId": "evt-007",
+    "EventName": "GetSecretValue",
+    "EventTime": "2026-02-20T04:00:00+00:00",
+    "Username": "role-compromised",
+    "SourceIPAddress": "203.0.113.99",
+    "Resources": []
+  },
+  {
+    "EventId": "evt-008",
+    "EventName": "DescribeInstances",
+    "EventTime": "2026-02-26T08:00:00+00:00",
+    "Username": "svc-external-api",
+    "SourceIPAddress": "192.168.1.100",
+    "Resources": []
+  },
+  {
+    "EventId": "evt-009",
+    "EventName": "GetUser",
+    "EventTime": "2026-02-24T13:00:00+00:00",
+    "Username": "svc-external-api",
+    "SourceIPAddress": "192.168.1.100",
+    "Resources": []
+  },
+  {
+    "EventId": "evt-010",
+    "EventName": "CreateUser",
+    "EventTime": "2026-02-19T02:30:00+00:00",
+    "Username": "role-compromised",
+    "SourceIPAddress": "198.51.100.77",
+    "Resources": []
+  }
+]

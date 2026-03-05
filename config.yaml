@@ -1,0 +1,28 @@
+# NHI Discovery Tool - Konfiguration
+# Modell: CVSS-inspiriert (RISK_SCORE = sqrt(LIKELIHOOD × IMPACT) × 100)
+
+scoring:
+  # Welches Scoring-Modell aktiv ist (für Dokumentation und Dashboard)
+  model: cvss_inspired
+
+  # Schwellenwerte für die LIKELIHOOD-Berechnung
+  thresholds:
+    # Access Key Rotation (Vulnerability-Komponente)
+    key_rotation_warning_days: 90    # +0.1 Vulnerability
+    key_rotation_critical_days: 365  # +0.3 Vulnerability (kombiniert mit "nie rotiert")
+
+# Risk-Level-Schwellenwerte (Score 0-100)
+risk_levels:
+  critical: 80  # sqrt(L×I) ≥ 0.80 → L×I ≥ 0.64
+  high:     60  # sqrt(L×I) ≥ 0.60 → L×I ≥ 0.36
+  medium:   40  # sqrt(L×I) ≥ 0.40 → L×I ≥ 0.16
+
+aws:
+  region: eu-central-1
+
+# NHIs die beim Scan ignoriert werden sollen
+ignore:
+  users: []
+    # - "admin-human-user"
+  roles: []
+    # - "OrganizationAccountAccessRole"
